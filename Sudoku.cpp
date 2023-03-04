@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "Board.h"
 using namespace std;
 
@@ -37,10 +38,39 @@ ifstream fileInput() {
 	return in;
 }
 
+
+void isValidTests() {
+	cout << "isValid() tests" << endl;
+
+	int size = 9;
+	ifstream in("input.txt");
+	Board board(size, in);
+
+	cout << "Expected: 0\nActual: " << board.isValid() << endl;
+	in.close();
+
+	in.open("completed.txt");
+	Board board2(size, in);
+	cout << "Expected: 1\nActual: " << board.isValid() << endl;
+	in.close();
+}
+
 int main() {
+	
+	isValidTests(); // DEBUG
+
 	int size = sizeInput();
 	ifstream in = fileInput();
 	Board board(size, in);
+	cout << endl;
+
+	/*while (!board.isValid()) {
+		board.print();
+
+	}*/
 	board.print();
+	//print congrats msg
+
+	in.close();
 	return 0;
 }

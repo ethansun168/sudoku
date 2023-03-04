@@ -39,7 +39,7 @@ void Board::setSize(int size) {
 void Board::print() {
 	for (int row = 0; row < size; row++) {
 		for (int col = 0; col < size; col++) {
-			if (*(board + row * size + col) == 0) {
+			if (*at(row, col) == 0) {
 				cout << ". ";
 			}
 			else {
@@ -53,6 +53,12 @@ void Board::print() {
 
 int* Board::at(int row, int col) {
 	return board + row * size + col;
+}
+
+bool Board::isValid() const {
+	
+	
+	return false;
 }
 
 Board::~Board() {
