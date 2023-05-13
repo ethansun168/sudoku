@@ -61,6 +61,10 @@ bool Board::isValid() const {
 	return false;
 }
 
+string Board::out() const {
+	return "hi";
+}
+
 Board::~Board() {
 	delete[] board;
 }

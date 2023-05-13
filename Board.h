@@ -21,14 +21,21 @@ public:
 	//requires 1 <= size <= 9
 	void setSize(int size);
 
-	//return a pointer to board[row][col]
-	//*at(row, col) = value;
-	//to set the value at that index
+	/*
+	return a pointer to board[row][col]
+	*at(row, col) = value;
+	to set the value at that index
+	*/
 	int* at(int row, int col);
 
-	//checks if the board is a valid sudoku board
-	//if one square is empty, return false
+	/*
+	checks if the board is a valid sudoku board
+	3x3 squares, 
+	*/
 	bool isValid() const;
+
+	//returns the numbers as a string
+	std::string out() const;
 
 	//destructor - deallocate board pointer from dynamic memory
 	~Board();
